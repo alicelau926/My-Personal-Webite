@@ -14,10 +14,6 @@ $(function () {
   });
 });
 
-(function () {
-    emailjs.init("bD1ZFHucnev4gHelF");
-})();
-
 function sendmail() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
