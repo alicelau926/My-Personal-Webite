@@ -14,7 +14,7 @@ $(function () {
   });
 });
 
-function sendmail() {
+function sendEmail() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let usermessage = document.getElementById("message").value;
