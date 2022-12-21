@@ -15,17 +15,20 @@ $(function() {
 });
 
 function sendEmail() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
-    Email.send({
-        SecureToken : "c60e99e4-71f5-4c85-a8d3-549f6f0db8a9",
-        To : 'huifen0926@hotmail.com',
-        From : "alicelauhuifen@gmail.com",
-        Subject : "Mail from website",
-        Body : finalmessage
-    }).then(
-      message => alert("Message sent successfully.")
-    );
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let usermessage = document.getElementById("message").value;
+  
+  var contactParams = {
+    from_name: name,
+    from_email: email,
+    message: usermessage,
+  };
+
+  emailjs.send(service_exsycyf, template_rh9neso, contactParams, publicKey)
+  .then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+ }, function(error) {
+    console.log('FAILED...', error);
+ });
 }
