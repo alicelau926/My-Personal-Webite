@@ -25,7 +25,7 @@ function sendEmail() {
     message: usermessage,
   };
 
-  emailjs.send(service_exsycyf, template_rh9neso, contactParams, publicKey)
+  emailjs.send("service_exsycyf", "template_rh9neso", contactParams)
   .then(function(response) {
     console.log('SUCCESS!', response.status, response.text);
  }, function(error) {
